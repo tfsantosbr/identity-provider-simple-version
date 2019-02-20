@@ -1,0 +1,1 @@
+# identity-provider-simple-version
