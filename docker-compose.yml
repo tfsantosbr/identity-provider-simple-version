@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+
+  identity.clientjs:
+    build: 
+      context: ./Identity.ClientJs
+      dockerfile: Dockerfile
+    volumes:
+      - ./Identity.ClientJs:/usr/share/nginx/html
+    ports:
+     - 5000:80
+     
+  identity.api:
+    build:
+      context: ./Identity.Api
+      dockerfile: Dockerfile
+    ports:
+      - 3000:80
+
+  identity.provider:
+    build:
+      context: ./Identity.Provider
+      dockerfile: Dockerfile
+    ports:
+      - 2000:80
